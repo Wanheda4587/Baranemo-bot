@@ -39,7 +39,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await update.message.reply_text("⏳ Düşünüyorum...")
 
-    docs = vectordb.similarity_search(user_message, k=4)
+    docs = vectordb.similarity_search(user_message, k=12)
     context_text = "\n\n".join([doc.page_content for doc in docs])
 
     gecmis = gecmisi_yukle()
