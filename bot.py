@@ -22,15 +22,16 @@ def gecmisi_yukle():
     return []
 
 def gecmisi_kaydet(gecmis):
-    def metni_al(response):
-    if isinstance(metni_al(response), str):
-        return metni_al(response)
-    for block in metni_al(response):
-        if isinstance(block, dict) and block.get("type") == "text":
-            return block["text"]
-    return str(metni_al(response))
     with open(GECMIS_DOSYA, "w", encoding="utf-8") as f:
         json.dump(gecmis, f, ensure_ascii=False, indent=2)
+
+def metni_al(response):
+    if isinstance(response.content, str):
+        return response.content
+    for block in response.content:
+        if isinstance(block, dict) and block.get("type") == "text":
+            return block["text"]
+    return str(response.content)
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_message = update.message.text
