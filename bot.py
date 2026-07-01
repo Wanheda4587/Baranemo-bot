@@ -7,8 +7,8 @@ from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings import SentenceTransformerEmbeddings
 from langchain_anthropic import ChatAnthropic
 
-TELEGRAM_TOKEN = "BURAYA_TELEGRAM_TOKENINI_YAZ"
-ANTHROPIC_KEY = "BURAYA_CLAUDE_API_KEYINI_YAZ"
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+ANTHROPIC_KEY = os.getenv("ANTHROPIC_API_KEY")
 GECMIS_DOSYA = "sohbet_gecmisi.json"
 
 embeddings = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
