@@ -1,0 +1,8 @@
+anthropic
+python-telegram-bot
+chromadb
+langchain
+langchain-community
+langchain-anthropic
+sentence-transformers
+httpx

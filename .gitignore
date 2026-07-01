@@ -1,0 +1,5 @@
+env/
+veritabani/
+__pycache__/
+*.pyc
+sohbet_gecmisi.json
