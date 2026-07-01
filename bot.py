@@ -13,7 +13,7 @@ GECMIS_DOSYA = "sohbet_gecmisi.json"
 
 embeddings = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
 vectordb = Chroma(persist_directory="./veritabani", embedding_function=embeddings)
-llm = ChatAnthropic(model="claude-sonnet-5", anthropic_api_key=ANTHROPIC_KEY, max_tokens=1000)
+llm = ChatAnthropic(model="claude-sonnet-5", anthropic_api_key=ANTHROPIC_KEY, max_tokens=4000)
 
 def gecmisi_yukle():
     if os.path.exists(GECMIS_DOSYA):
